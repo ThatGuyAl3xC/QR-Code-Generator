@@ -1,0 +1,56 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--    <head>-->
+<!--        <meta charset="UTF-8">-->
+<!--        <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--        <title>QR CODE GENERATOR</title>-->
+<!--        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+<!--    </head>-->
+<!--    <body>-->
+<!--        <div class="title">-->
+<!--            <h1>QR Code Generator🔥</h1>-->
+<!--            <h2>Insert a link into the text box to generate a QR Code</h2>-->
+<!--        </div>-->
+<!--        <form action="/" method="POST">-->
+<!--            <input type="text" name="link" />-->
+<!--            <button type="submit">Generate QR</button>-->
+<!--        </form>-->
+<!--        {% if data %}-->
+<!--        <div class="generated">-->
+<!--            <img src="{{data}}" alt="" />-->
+<!--            <p>Here is the QR code generated for you!</p>-->
+<!--        </div>-->
+<!--        {% endif %}-->
+<!--    </body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE GENERATOR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>QR Code Generator<span class="flame">🔥</span></h1>
+            <p class="subtitle">Generate a QR Code by entering a link below:</p>
+        </div>
+        <form action="/" method="POST" class="form">
+            <input type="text" name="link" placeholder="Enter URL" />
+            <button type="submit">Generate QR</button>
+        </form>
+        {% if data %}
+        <div class="generated">
+            <img src="{{ data }}" alt="Generated QR Code" class="qr-code" />
+            <p class="generated-text">Here is the QR code generated for you!</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
